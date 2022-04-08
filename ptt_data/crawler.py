@@ -148,7 +148,7 @@ def main(start_page, end_page):
             df.to_sql(
                 name="ptt",
                 con=db_router.mysql_pttdata_conn,
-                if_exists="replace",
+                if_exists="append",
                 index=False,
                 chunksize=1000,
             )
