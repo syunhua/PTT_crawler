@@ -144,7 +144,17 @@ def main(start_page, end_page):
     for page in tqdm(date_list):
         logger.info(page)
         df = ptt_crawler(page=page)
-        print(df)
+        if len(df) > 0:
+            try:
+                df.to_sql(
+                    name="Gossiping",
+                    con=db_router.mysql_PTTdata_conn,
+                    if_exists="append",
+                    index=False,
+                    chunksize=1000,
+                )
+            except Exception as e:
+                logger.info(e)
 
 
 
