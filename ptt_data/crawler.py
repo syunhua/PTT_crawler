@@ -129,19 +129,6 @@ def ptt_crawler(page, board='Gossiping'):
     except:
         print(f"{page} error")
 
-
-def gen_task_paramter_list(start_page, end_page ):
-    """建立時間列表, 用於爬取所有資料, 這時有兩種狀況
-    1. 抓取歷史資料
-    2. 每日更新
-    因此, 爬蟲日期列表, 根據 history 參數進行判斷
-    """
-    pages = ( int(end_page) - int(start_page) ) + 1
-    parameter_list = [ str(start_page + p) for p in range(pages) ]
-    return parameter_list
-
-
-
 def ptt_concat(start_page, end_page):
     df = pd.concat([ptt_crawler(p, board='Gossiping') for p in gen_task_paramter_list(start_page, end_page)])
     #ptt_data = '/Users/syunhua/Desktop/Side_project/ptt_data/crawler_ptt_data.csv'
@@ -152,7 +139,9 @@ def ptt_concat(start_page, end_page):
 
 def main( start_page, end_page):
     pages = ( int(end_page) - int(start_page) ) + 1
-    date_list = [ (start_page + int(p)) for p in range(pages) ]
+    date_list=[]
+    for p in range(pages):
+        date_list.append(start_page + int(p))
     #db_router = Router()
     for page in tqdm(date_list):
         logger.info(page)
