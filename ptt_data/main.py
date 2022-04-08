@@ -19,7 +19,7 @@ def read_root():
 
 
 @app.get("/ptt")
-def taiwan_stock_price(
+def ptt_crawler(
     start_month,
     start_date,
     end_date,
