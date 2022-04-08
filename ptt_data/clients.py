@@ -13,7 +13,7 @@ def get_mysql_pttdata_conn() -> engine.base.Connection:
     database: financialdata
     如果有實體 IP，以上設定可以自行更改
     """
-    address = "mysql+pymysql://root:test@172.105.208.52:8000/pttdata"
+    address = "mysql+pymysql://root:test@172.105.208.52:3306/pttdata"
     engine = create_engine(address)
     connect = engine.connect()
     return connect
