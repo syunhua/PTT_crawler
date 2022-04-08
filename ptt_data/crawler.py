@@ -148,7 +148,7 @@ def main(start_page, end_page):
             try:
                 df.to_sql(
                     name="Gossiping",
-                    con=db_router.mysql_PTTdata_conn,
+                    con=db_router.mysql_pttdata_conn,
                     if_exists="append",
                     index=False,
                     chunksize=1000,
