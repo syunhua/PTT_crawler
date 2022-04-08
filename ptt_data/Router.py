@@ -10,8 +10,8 @@ def check_alive(
     connect: engine.base.Connection,
 ):
     """在每次使用之前，先確認 connect 是否活者"""
-    #connect.execute("SELECT 1 + 1")
-    pass
+    connect.execute("SELECT 1 + 1")
+    
 
 
 def reconnect(
