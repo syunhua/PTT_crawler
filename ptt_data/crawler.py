@@ -148,7 +148,7 @@ def main(start_page, end_page):
         if len(df) > 0:
             try:
                 df.to_sql(
-                    name="ptt3",
+                    name="ptt",
                     con=db_router.mysql_pttdata_conn,
                     if_exists="append",
                     index=False,
