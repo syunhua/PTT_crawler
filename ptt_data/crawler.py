@@ -9,7 +9,7 @@ import requests, bs4
 from loguru import logger
 from pydantic import BaseModel
 from tqdm import tqdm,trange
-from ptt_data.Router import Router
+from Router import Router
 
 def ptt_crawler(page, board='Gossiping'):
     try:
