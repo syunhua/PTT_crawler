@@ -103,7 +103,7 @@ def ptt_crawler(page, board='Gossiping'):
         year=[]
         for i in range(len(date)):
             Day_of_week.append(date[i][0])
-            Month_Days.append(date[i][1]+' '+date[i][3])
+            Month_Days.append(date[i][1]+date[i][3])
             Times.append(date[i][4])
             #year.append(date[i][2])
         
