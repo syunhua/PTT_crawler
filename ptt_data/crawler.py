@@ -150,13 +150,9 @@ def ptt_concat(start_page, end_page):
     return df
 
 
-def main(
-    start_page: str, end_page: str
-):
-    """證交所寫明, ※ 本資訊自民國93年2月11日起提供"""
-    date_list = gen_task_paramter_list(
-        start_page, end_page
-    )
+def main( start_page, end_page):
+    pages = ( int(end_page) - int(start_page) ) + 1
+    date_list = [ str(start_page + p) for p in range(pages) ]
     db_router = Router()
     for page in tqdm(date_list):
         logger.info(page)
