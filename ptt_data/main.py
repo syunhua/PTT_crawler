@@ -27,8 +27,8 @@ def ptt_crawler(
     sql = f"""
     select * from ptt
     where LEFT(`Month_Days`,3)='{start_month}' 
-    AND RIGHT(`Month_Days`,1)>'{start_date}'
-    AND RIGHT(`Month_Days`,1)<'{end_date}'
+    AND RIGHT(`Month_Days`,1)>{start_date}
+    AND RIGHT(`Month_Days`,1)<{end_date}
     """
     mysql_conn = get_mysql_pttdata_conn()
     data_df = pd.read_sql(sql, con=mysql_conn)
