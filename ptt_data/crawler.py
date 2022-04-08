@@ -108,19 +108,19 @@ def ptt_crawler(page, board='Gossiping'):
             year.append(date[i][4])
 
         # 表格
-        ptt_parse = pd.DataFrame({'文章標題':title,
-                                  '推噓':good_bad,
-                                  '作者':author,
-                                  '年':year,
-                                  '月/日':Month_Days,
-                                  '星期':Day_of_week,
-                                  '時間':Times,
-                                  '文章內容':article_content,'文章內容2':article_content_null,
-                                  '推文內容':push_all,
-                                  '連結':title_url})
+        ptt_parse = pd.DataFrame({'Title':title,
+                                  'Good_bad':good_bad,
+                                  'Author':author,
+                                  'year':year,
+                                  'Month_Days':Month_Days,
+                                  'Day_of_week':Day_of_week,
+                                  'Times':Times,
+                                  'article_content':article_content,'article_content_null':article_content_null,
+                                  'push_all':push_all,
+                                  'title_url':title_url})
 
-        ptt_parse['文章內容'] = ptt_parse['文章內容']+' '+ptt_parse['文章內容2']
-        del ptt_parse['文章內容2']
+        #ptt_parse['文章內容'] = ptt_parse['article_content']+' '+ptt_parse['article_content_null']
+        #del ptt_parse['文章內容2']
 
         
 
