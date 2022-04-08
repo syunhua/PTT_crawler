@@ -107,9 +107,6 @@ def ptt_crawler(page, board='Gossiping'):
             Times.append(date[i][3])
             year.append(date[i][4])
         
-        article_content = article_content.astype(str)
-        article_content_null = article_content_null.astype(str)
-        push_all = push_all.astype(str)
 
         # 表格
         ptt_parse = pd.DataFrame({'Title':title,
@@ -119,8 +116,8 @@ def ptt_crawler(page, board='Gossiping'):
                                   'Month_Days':Month_Days,
                                   'Day_of_week':Day_of_week,
                                   'Times':Times,
-                                  'article_content':article_content,'article_content_null':article_content_null,
-                                  'push_all':push_all,
+                                  #'article_content':article_content,'article_content_null':article_content_null,
+                                  #'push_all':push_all,
                                   'title_url':title_url})
 
         #ptt_parse['文章內容'] = ptt_parse['article_content']+' '+ptt_parse['article_content_null']
