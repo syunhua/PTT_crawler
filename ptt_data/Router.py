@@ -56,23 +56,23 @@ def check_connect_alive(
 
 class Router:
     def __init__(self):
-        self._mysql_financialdata_conn = (
-            clients.get_mysql_financialdata_conn()
+        self._mysql_pttdata_conn = (
+            clients.get_mysql_pttdata_conn()
         )
 
-    def check_mysql_financialdata_conn_alive(
+    def check_mysql_pttdata_conn_alive(
         self,
     ):
-        self._mysql_financialdata_conn = check_connect_alive(
-            self._mysql_financialdata_conn,
-            clients.get_mysql_financialdata_conn,
+        self._mysql_pttdata_conn = check_connect_alive(
+            self._mysql_pttdata_conn,
+            clients.get_mysql_pttdata_conn,
         )
         return (
-            self._mysql_financialdata_conn
+            self._mysql_pttdata_conn
         )
 
     @property
-    def mysql_financialdata_conn(self):
+    def mysql_pttdata_conn(self):
         """
         使用 property，在每次拿取 connect 時，
         都先經過 check alive 檢查 connect 是否活著
