@@ -3,8 +3,7 @@ import typing
 
 from loguru import logger
 from sqlalchemy import engine
-
-from ptt_data import clients
+import clients
 
 
 def check_alive(
