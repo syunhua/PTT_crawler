@@ -143,7 +143,7 @@ def main(start_page, end_page):
     for page in tqdm(date_list):
         logger.info(page)
         df = ptt_crawler(page=page)
-        if len(df) > 0:
+        #if len(df) > 0:
             try:
                 df.to_sql(
                     name="ptt",
@@ -154,9 +154,6 @@ def main(start_page, end_page):
                 )
             except Exception as e:
                 logger.info(e)
-                
-        else :
-            print(f"{page} error")
 
 if __name__=="__main__":
     start_page,end_page = sys.argv[1:]
