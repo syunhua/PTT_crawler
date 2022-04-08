@@ -154,7 +154,8 @@ def main(start_page, end_page):
                 )
             except Exception as e:
                 logger.info(e)
-        else print(f"{page} error")
+                
+            else print(f"{page} error")
 
 if __name__=="__main__":
     start_page,end_page = sys.argv[1:]
