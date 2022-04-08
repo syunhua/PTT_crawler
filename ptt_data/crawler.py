@@ -106,6 +106,10 @@ def ptt_crawler(page, board='Gossiping'):
             Month_Days.append(date[i][1]+'/'+date[i][2])
             Times.append(date[i][3])
             year.append(date[i][4])
+        
+        article_content = article_content.astype(str)
+        article_content_null = article_content_null.astype(str)
+        push_all = push_all.astype(str)
 
         # 表格
         ptt_parse = pd.DataFrame({'Title':title,
