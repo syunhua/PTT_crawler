@@ -144,16 +144,16 @@ def main(start_page, end_page):
         logger.info(page)
         df = ptt_crawler(page=page)
         #if len(df) > 0:
-            try:
-                df.to_sql(
-                    name="ptt",
-                    con=db_router.mysql_pttdata_conn,
-                    if_exists="append",
-                    index=False,
-                    chunksize=1000,
-                )
-            except Exception as e:
-                logger.info(e)
+        try:
+            df.to_sql(
+                name="ptt",
+                con=db_router.mysql_pttdata_conn,
+                if_exists="append",
+                index=False,
+                chunksize=1000,
+            )
+        except Exception as e:
+            logger.info(e)
 
 if __name__=="__main__":
     start_page,end_page = sys.argv[1:]
