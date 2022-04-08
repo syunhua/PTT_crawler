@@ -123,20 +123,18 @@ def ptt_crawler(page, board='Gossiping'):
         #ptt_parse['文章內容'] = ptt_parse['article_content']+' '+ptt_parse['article_content_null']
         #del ptt_parse['文章內容2']
 
-        
-
         return ptt_parse
     
     except:
         print(f"{page} error")
 
-def ptt_concat(start_page, end_page):
-    df = pd.concat([ptt_crawler(p, board='Gossiping') for p in gen_task_paramter_list(start_page, end_page)])
-    #ptt_data = '/Users/syunhua/Desktop/Side_project/ptt_data/crawler_ptt_data.csv'
-    #df.to_csv( ptt_data  , index=False )
-    #for i in trange(int(start_page),int(end_page))]).reset_index(drop=True)
-    return df
-
+#匯出csv
+#def ptt_concat(start_page, end_page):
+#    df = pd.concat([ptt_crawler(p, board='Gossiping') for p in gen_task_paramter_list(start_page, end_page)])
+#    ptt_data = '/Users/syunhua/Desktop/Side_project/ptt_data/crawler_ptt_data.csv'
+#    df.to_csv( ptt_data  , index=False )
+#    #for i in trange(int(start_page),int(end_page))]).reset_index(drop=True)
+#    return df
 
 def main(start_page, end_page):
     pages = ( int(end_page) - int(start_page) ) + 1
@@ -156,8 +154,6 @@ def main(start_page, end_page):
                 )
             except Exception as e:
                 logger.info(e)
-
-
 
 if __name__=="__main__":
     start_page,end_page = sys.argv[1:]
