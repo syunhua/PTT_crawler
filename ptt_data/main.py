@@ -4,7 +4,7 @@ from sqlalchemy import create_engine, engine
 
 
 def get_mysql_pttdata_conn() -> engine.base.Connection:
-    address = "mysql+pymysql://root:test@127.0.0.1:3306/pttdata"
+    address = "mysql+pymysql://root:test@172.105.208.52:3306/pttdata"
     engine = create_engine(address)
     connect = engine.connect()
     return connect
