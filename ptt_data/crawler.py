@@ -139,11 +139,7 @@ def ptt_concat(start_page, end_page):
 
 def main(start_page, end_page):
     pages = ( int(end_page) - int(start_page) ) + 1
-    date_list=[]
-    for p in range(pages):
-        date_list.append(
-            int(start_page) +
-            int(p))
+    date_list=[(int(start_page) + int(p)) for p in range(pages) ]         
     #db_router = Router()
     for page in tqdm(date_list):
         logger.info(page)
